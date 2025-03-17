@@ -1485,34 +1485,7 @@ export const courseData = {
           "description": "You must enroll in matched instructor sections",
           "components": ["Lecture", "Tutorial", "Computer Lab"],
           "options": [
-            { 
-              "groupId": "asma1", 
-              "name": "Asma Damankesh Group 1",
-              "description": "Thursday 11:30-13:30 (Lecture), Monday 10:30-11:30 (Tutorial) & Wednesday 14:30-16:30 (Lab)",
-              "instructorName": "Asma Damankesh", 
-              "ids": ["csci435-lecture-1", "csci435-tutorial-1", "csci435-lab-1"] 
-            },
-            { 
-              "groupId": "asma2", 
-              "name": "Asma Damankesh Group 2",
-              "description": "Thursday 11:30-13:30 (Lecture), Wednesday 11:30-12:30 (Tutorial) & Monday 12:30-14:30 (Lab)",
-              "instructorName": "Asma Damankesh", 
-              "ids": ["csci435-lecture-1", "csci435-tutorial-2", "csci435-lab-4"] 
-            },
-            { 
-              "groupId": "george1", 
-              "name": "George Tsaramirsis Group 1",
-              "description": "Thursday 11:30-13:30 (Lecture), Monday 15:30-16:30 (Tutorial) & Wednesday 16:30-18:30 (Lab)",
-              "instructorName": "George Tsaramirsis", 
-              "ids": ["csci435-lecture-1", "csci435-tutorial-3", "csci435-lab-2"] 
-            },
-            { 
-              "groupId": "george2", 
-              "name": "George Tsaramirsis Group 2",
-              "description": "Thursday 11:30-13:30 (Lecture), Monday 09:30-10:30 (Tutorial) & Thursday 14:30-16:30 (Lab)",
-              "instructorName": "George Tsaramirsis", 
-              "ids": ["csci435-lecture-1", "csci435-tutorial-4", "csci435-lab-3"] 
-            }
+            
           ]
         }
       ],
