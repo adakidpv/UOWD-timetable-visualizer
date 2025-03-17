@@ -1,5 +1,16 @@
 // src/data/courseData.js
 
+// src/data/courseData.js
+
+// This file defines all the subjects, components, and sessions available for scheduling.
+// Format:
+// - Each subject has a unique code, name, and faculty
+// - Components are the class types (Lecture, Tutorial, Lab, etc.)
+// - Components must be selected to complete enrollment
+// - ComponentGroups define which components must be chosen together (i.e. same lecturer for both lecture sections)
+// - For each component, options list the available sessions
+// - In the componentGroups, use the "ids" array to link related options together
+
 export const courseData = {
   "subjects": [
     {
@@ -12,12 +23,33 @@ export const courseData = {
         {
           "groupType": "tutorial_group",
           "name": "Tutorial Group",
+          "description": "Tutorial groups must be the same for both A and B sessions",
           "components": ["Tutorial A", "Tutorial B"],
           "options": [
-            { "groupId": "group1", "ids": ["ara101-tutorialA-1", "ara101-tutorialB-1"] },
-            { "groupId": "group2", "ids": ["ara101-tutorialA-2", "ara101-tutorialB-2"] },
-            { "groupId": "group3", "ids": ["ara101-tutorialA-3", "ara101-tutorialB-3"] },
-            { "groupId": "group4", "ids": ["ara101-tutorialA-4", "ara101-tutorialB-4"] }
+            { 
+              "groupId": "group1", 
+              "name": "Group 1 (Nancy El Sobkey)",
+              "description": "Monday 11:30-13:30 & Wednesday 11:30-13:30",
+              "ids": ["ara101-tutorialA-1", "ara101-tutorialB-1"] 
+            },
+            { 
+              "groupId": "group2", 
+              "name": "Group 2 (Nancy El Sobkey)",
+              "description": "Monday 14:30-16:30 & Wednesday 14:30-16:30",
+              "ids": ["ara101-tutorialA-2", "ara101-tutorialB-2"] 
+            },
+            { 
+              "groupId": "group3", 
+              "name": "Group 3 (Katia Freywat)",
+              "description": "Monday 9:30-11:30 & Thursday 9:30-11:30",
+              "ids": ["ara101-tutorialA-3", "ara101-tutorialB-3"] 
+            },
+            { 
+              "groupId": "group4", 
+              "name": "Group 4 (Katia Freywat)",
+              "description": "Monday 12:30-14:30 & Thursday 12:30-14:30",
+              "ids": ["ara101-tutorialA-4", "ara101-tutorialB-4"] 
+            }
           ]
         }
       ],
@@ -149,11 +181,30 @@ export const courseData = {
         {
           "groupType": "lecturer_group",
           "name": "Lecture Group",
+          "description": "You must enroll in the same lecturer's sessions for both Lecture A and Lecture B",
           "components": ["Lecture A", "Lecture B"],
           "options": [
-            { "groupId": "hclim", "instructorName": "HC Lim", "ids": ["csci251-lectureA-1", "csci251-lectureB-1"] },
-            { "groupId": "abdellatif1", "instructorName": "Abdellatif Tchantchane", "ids": ["csci251-lectureA-2", "csci251-lectureB-2"] },
-            { "groupId": "abdellatif2", "instructorName": "Abdellatif Tchantchane", "ids": ["csci251-lectureA-3", "csci251-lectureB-3"] }
+            { 
+              "groupId": "hclim", 
+              "name": "HC Lim",
+              "description": "Monday 8:30-10:30 & Wednesday 8:30-10:30",
+              "instructorName": "HC Lim", 
+              "ids": ["csci251-lectureA-1", "csci251-lectureB-1"] 
+            },
+            { 
+              "groupId": "abdellatif1", 
+              "name": "Abdellatif Tchantchane (Midday)",
+              "description": "Monday 12:30-14:30 & Tuesday 12:30-14:30",
+              "instructorName": "Abdellatif Tchantchane", 
+              "ids": ["csci251-lectureA-2", "csci251-lectureB-2"] 
+            },
+            { 
+              "groupId": "abdellatif2", 
+              "name": "Abdellatif Tchantchane (Evening)",
+              "description": "Monday 16:30-18:30 & Tuesday 16:30-18:30",
+              "instructorName": "Abdellatif Tchantchane", 
+              "ids": ["csci251-lectureA-3", "csci251-lectureB-3"] 
+            }
           ]
         }
       ],
@@ -532,8 +583,25 @@ export const courseData = {
     {
       "code": "CSCI369",
       "name": "Ethical Hacking",
-      "faculty": "School of Engineering",
+      "faculty": "School of Computer Science",
       "degree": "Bachelor of Computer Science",
+      "componentGroups": [
+        {
+          "groupType": "lecture_tutorial_group",
+          "name": "Lecture and Tutorial Group",
+          "description": "You must enroll in the same instructor's lecture and tutorial",
+          "components": ["Lecture", "Tutorial"],
+          "options": [
+            { 
+              "groupId": "manojkumar", 
+              "name": "Manoj Kumar Group",
+              "description": "Tuesday 8:30-10:30 (Lecture) & Monday 11:30-12:30 (Tutorial)",
+              "instructorName": "Manoj Kumar", 
+              "ids": ["csci369-lecture-1", "csci369-tutorial-2"] 
+            }
+          ]
+        }
+      ],
       "components": [
         {
           "name": "Computer Lab",
@@ -755,6 +823,44 @@ export const courseData = {
       "name": "Computer Vision Algorithms and Systems",
       "faculty": "School of Computer Science",
       "degree": "Bachelor of Computer Science",
+      "componentGroups": [
+        {
+          "groupType": "lecture_tutorial_lab_group",
+          "name": "Lecture, Tutorial and Lab Group",
+          "description": "You must enroll in matched instructor sections",
+          "components": ["Lecture", "Tutorial", "Computer Lab"],
+          "options": [
+            { 
+              "groupId": "asma1", 
+              "name": "Asma Damankesh Group 1",
+              "description": "Thursday 11:30-13:30 (Lecture), Monday 10:30-11:30 (Tutorial) & Wednesday 14:30-16:30 (Lab)",
+              "instructorName": "Asma Damankesh", 
+              "ids": ["csci435-lecture-1", "csci435-tutorial-1", "csci435-lab-1"] 
+            },
+            { 
+              "groupId": "asma2", 
+              "name": "Asma Damankesh Group 2",
+              "description": "Thursday 11:30-13:30 (Lecture), Wednesday 11:30-12:30 (Tutorial) & Monday 12:30-14:30 (Lab)",
+              "instructorName": "Asma Damankesh", 
+              "ids": ["csci435-lecture-1", "csci435-tutorial-2", "csci435-lab-4"] 
+            },
+            { 
+              "groupId": "george1", 
+              "name": "George Tsaramirsis Group 1",
+              "description": "Thursday 11:30-13:30 (Lecture), Monday 15:30-16:30 (Tutorial) & Wednesday 16:30-18:30 (Lab)",
+              "instructorName": "George Tsaramirsis", 
+              "ids": ["csci435-lecture-1", "csci435-tutorial-3", "csci435-lab-2"] 
+            },
+            { 
+              "groupId": "george2", 
+              "name": "George Tsaramirsis Group 2",
+              "description": "Thursday 11:30-13:30 (Lecture), Monday 09:30-10:30 (Tutorial) & Thursday 14:30-16:30 (Lab)",
+              "instructorName": "George Tsaramirsis", 
+              "ids": ["csci435-lecture-1", "csci435-tutorial-4", "csci435-lab-3"] 
+            }
+          ]
+        }
+      ],
       "components": [
         {
           "name": "Computer Lab",
@@ -898,6 +1004,37 @@ export const courseData = {
       "name": "Software Development Methodologies",
       "faculty": "School of Computer Science",
       "degree": "Bachelor of Computer Science, Bachelor of Business Information Systems",
+      "componentGroups": [
+        {
+          "groupType": "lecture_tutorial_lab_group",
+          "name": "Lecture, Tutorial and Lab Group",
+          "description": "You must enroll in compatible time slots",
+          "components": ["Lecture", "Tutorial", "Computer Lab"],
+          "options": [
+            { 
+              "groupId": "nkqubela_morning", 
+              "name": "Morning Session",
+              "description": "Wednesday 12:30-14:30 (Lecture), Wednesday 11:30-12:30 (Tutorial) & Tuesday 12:30-14:30 (Lab)",
+              "instructorName": "Nkqubela Ruxwana / Tauqeer Faiz / Deepa", 
+              "ids": ["csit314-lecture-1", "csit314-tutorial-2", "csit314-lab-2"] 
+            },
+            { 
+              "groupId": "nkqubela_afternoon", 
+              "name": "Afternoon Session",
+              "description": "Wednesday 14:30-16:30 (Lecture), Wednesday 16:30-17:30 (Tutorial) & Wednesday 14:30-16:30 (Lab)",
+              "instructorName": "Nkqubela Ruxwana / Tauqeer Faiz / Sara", 
+              "ids": ["csit314-lecture-2", "csit314-tutorial-1", "csit314-lab-6"] 
+            },
+            { 
+              "groupId": "nkqubela_evening", 
+              "name": "Evening Session",
+              "description": "Thursday 14:30-16:30 (Lecture), Tuesday 09:30-10:30 (Tutorial) & Wednesday 18:30-20:30 (Lab)",
+              "instructorName": "Nkqubela Ruxwana / Tauqeer Faiz / Deepa", 
+              "ids": ["csit314-lecture-3", "csit314-tutorial-3", "csit314-lab-1"] 
+            }
+          ]
+        }
+      ],
       "components": [
         {
           "name": "Computer Lab",
@@ -1078,8 +1215,39 @@ export const courseData = {
     {
       "code": "INFO411",
       "name": "Data Mining and Knowledge Discovery",
-      "faculty": "School of Engineering",
+      "faculty": "School of Computer Science",
       "degree": "Bachelor of Computer Science",
+      "componentGroups": [
+        {
+          "groupType": "lecture_tutorial_lab_group",
+          "name": "Lecture, Tutorial and Lab Group",
+          "description": "You must enroll in compatible sessions with the same instructor",
+          "components": ["Lecture", "Tutorial", "Computer Lab"],
+          "options": [
+            { 
+              "groupId": "farhad1", 
+              "name": "Farhad Morning Group",
+              "description": "Tuesday 10:30-12:30 (Lecture), Monday 09:30-10:30 (Tutorial) & Monday 14:30-16:30 (Lab)",
+              "instructorName": "Farhad Oroumchian", 
+              "ids": ["info411-lecture-1", "info411-tutorial-1", "info411-lab-1"] 
+            },
+            { 
+              "groupId": "farhad2", 
+              "name": "Farhad Midday Group",
+              "description": "Tuesday 10:30-12:30 (Lecture), Monday 11:30-12:30 (Tutorial) & Tuesday 08:30-10:30 (Lab)",
+              "instructorName": "Farhad Oroumchian / Abdullah El Nokiti", 
+              "ids": ["info411-lecture-1", "info411-tutorial-2", "info411-lab-2"] 
+            },
+            { 
+              "groupId": "farhad3", 
+              "name": "Farhad Afternoon Group",
+              "description": "Tuesday 10:30-12:30 (Lecture), Monday 12:30-13:30 (Tutorial) & Friday 08:30-10:30 (Lab)",
+              "instructorName": "Farhad Oroumchian / Abdullah El Nokiti", 
+              "ids": ["info411-lecture-1", "info411-tutorial-3", "info411-lab-3"] 
+            }
+          ]
+        }
+      ],
       "components": [
         {
           "name": "Computer Lab",
@@ -1195,8 +1363,39 @@ export const courseData = {
     {
       "code": "ISIT224",
       "name": "Management Information Systems",
-      "faculty": "School of Engineering",
+      "faculty": "School of Computer Science",
       "degree": "Bachelor of Computer Science, Bachelor of Business Information Systems",
+      "componentGroups": [
+        {
+          "groupType": "lecture_lab_group",
+          "name": "Lecture and Lab Group",
+          "description": "You must choose a lab session that coordinates with the lecture",
+          "components": ["Lecture", "Computer Lab"],
+          "options": [
+            { 
+              "groupId": "zeenath_morning", 
+              "name": "Morning Session",
+              "description": "Thursday 08:30-10:30 (Lecture) & Monday 10:30-12:30 (Lab)",
+              "instructorName": "Zeenath Khan / Pradnya Bhagwat", 
+              "ids": ["isit224-lecture-1", "isit224-lab-3"] 
+            },
+            { 
+              "groupId": "zeenath_afternoon", 
+              "name": "Afternoon Session",
+              "description": "Thursday 08:30-10:30 (Lecture) & Thursday 12:30-14:30 (Lab)",
+              "instructorName": "Zeenath Khan / Pradnya Bhagwat", 
+              "ids": ["isit224-lecture-1", "isit224-lab-1"] 
+            },
+            { 
+              "groupId": "zeenath_late", 
+              "name": "Late Afternoon Session",
+              "description": "Thursday 08:30-10:30 (Lecture) & Thursday 14:30-16:30 (Lab)",
+              "instructorName": "Zeenath Khan / Pradnya Bhagwat", 
+              "ids": ["isit224-lecture-1", "isit224-lab-2"] 
+            }
+          ]
+        }
+      ],
       "components": [
         {
           "name": "Computer Lab",
@@ -1261,6 +1460,11 @@ export const courseData = {
               ]
             }
           ]
+        },
+        {
+          "name": "Tutorial",
+          "required": 0,
+          "options": []
         }
       ]
     }

@@ -125,15 +125,14 @@ function App() {
         if (matchingOption) {
           console.log(`Found matching option group (${matchingOption.groupId}) for ${optionId}`);
           
-          // For each component in this group, set the corresponding option
-          group.components.forEach(groupComponent => {
+          // Identify the position of this option in the ids array
+          const selectedIdIndex = matchingOption.ids.indexOf(optionId);
+          
+          // For each component in this group, set the corresponding option by using the same index
+          group.components.forEach((groupComponent, componentIndex) => {
             if (groupComponent !== componentName) { // Skip the originally selected component
-              // Find the option ID for this component from the matching group
-              const relatedOptionId = matchingOption.ids.find(id => {
-                // Create a generic component prefix for matching
-                const componentPrefix = `${subject.code.toLowerCase()}-${groupComponent.toLowerCase().replace(/\s+/g, '')}`;
-                return id.startsWith(componentPrefix);
-              });
+              // Get the matching optionId for this component (same position in ids array)
+              const relatedOptionId = matchingOption.ids[componentIndex];
               
               if (relatedOptionId) {
                 console.log(`Auto-selecting ${relatedOptionId} for ${groupComponent}`);
