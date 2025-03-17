@@ -205,3 +205,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 - Inspired by the challenges of university timetable planning
 - Created to make students' lives easier when organizing their class schedules
+- Made with the help of Claude code
