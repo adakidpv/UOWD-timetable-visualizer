@@ -107,8 +107,51 @@ function App() {
     setSubjectColors(newSubjectColors);
   };
 
+  // Find related components that should be selected together based on component groups
+  const findGroupedComponents = (subject, componentName, optionId) => {
+    // If subject has no component groups, return empty object
+    if (!subject.componentGroups) return {};
+    
+    const relatedSelections = {};
+    
+    // Find all component groups that include this component
+    subject.componentGroups.forEach(group => {
+      if (group.components.includes(componentName)) {
+        // Find which option group contains the selected option
+        const matchingOption = group.options.find(option => 
+          option.ids.includes(optionId)
+        );
+        
+        if (matchingOption) {
+          console.log(`Found matching option group (${matchingOption.groupId}) for ${optionId}`);
+          
+          // For each component in this group, set the corresponding option
+          group.components.forEach(groupComponent => {
+            if (groupComponent !== componentName) { // Skip the originally selected component
+              // Find the option ID for this component from the matching group
+              const relatedOptionId = matchingOption.ids.find(id => {
+                // Create a generic component prefix for matching
+                const componentPrefix = `${subject.code.toLowerCase()}-${groupComponent.toLowerCase().replace(/\s+/g, '')}`;
+                return id.startsWith(componentPrefix);
+              });
+              
+              if (relatedOptionId) {
+                console.log(`Auto-selecting ${relatedOptionId} for ${groupComponent}`);
+                relatedSelections[`${subject.code}-${groupComponent}`] = relatedOptionId;
+              }
+            }
+          });
+        }
+      }
+    });
+    
+    console.log("Final related selections:", relatedSelections);
+    return relatedSelections;
+  };
+
   // Select or unselect a session option for a component
   const toggleSession = (subjectCode, componentName, optionId) => {
+    console.log(`toggleSession: ${subjectCode}, ${componentName}, ${optionId}`);
     const sessionKey = `${subjectCode}-${componentName}`;
     const isCurrentlySelected = selectedSessions[sessionKey] === optionId;
     
@@ -118,9 +161,39 @@ function App() {
     if (isCurrentlySelected) {
       // If this option is already selected, unselect it
       delete newSelectedSessions[sessionKey];
+      
+      // Also unselect any related components that were auto-selected
+      const subject = selectedSubjects.find(s => s.code === subjectCode);
+      if (subject && subject.componentGroups) {
+        subject.componentGroups.forEach(group => {
+          if (group.components.includes(componentName)) {
+            group.components.forEach(groupComponent => {
+              if (groupComponent !== componentName) {
+                const groupComponentKey = `${subjectCode}-${groupComponent}`;
+                delete newSelectedSessions[groupComponentKey];
+              }
+            });
+          }
+        });
+      }
     } else {
       // If this option is not selected, select it and make any previous selection for this component unselected
       newSelectedSessions[sessionKey] = optionId;
+      
+      // Find related components that should be selected together
+      const subject = selectedSubjects.find(s => s.code === subjectCode);
+      if (subject) {
+        console.log("Found subject:", subject.code);
+        if (subject.componentGroups) {
+          console.log("Subject has component groups:", subject.componentGroups);
+        }
+        
+        const relatedSelections = findGroupedComponents(subject, componentName, optionId);
+        console.log("Related selections found:", relatedSelections);
+        
+        // Add related selections to our selections object
+        Object.assign(newSelectedSessions, relatedSelections);
+      }
     }
     
     // Update the state
@@ -574,6 +647,50 @@ function App() {
                                 // Get subject color
                                 const optionColor = subjectColors[subject.code] || colorOptions[0];
                                 
+                                // Check if this component is part of a group
+                                const isPartOfGroup = subject.componentGroups?.some(group => 
+                                  group.components.includes(component.name));
+                                
+                                // Find the group information for this option (if any)
+                                let optionGroupInfo = null;
+                                if (isPartOfGroup) {
+                                  subject.componentGroups.forEach(group => {
+                                    if (group.components.includes(component.name)) {
+                                      const matchingOption = group.options.find(opt => 
+                                        opt.ids.includes(option.id)
+                                      );
+                                      if (matchingOption) {
+                                        optionGroupInfo = {
+                                          groupType: group.groupType,
+                                          groupId: matchingOption.groupId,
+                                          name: matchingOption.instructorName || `Group ${matchingOption.groupId}`,
+                                          relatedComponents: group.components.filter(c => c !== component.name)
+                                        };
+                                      }
+                                    }
+                                  });
+                                }
+                                  
+                                // If auto-selected as part of a group (but not directly selected by user)
+                                const isAutoSelected = isSelected && isPartOfGroup && 
+                                  subject.componentGroups?.some(group => {
+                                    if (!group.components.includes(component.name)) return false;
+                                    
+                                    // Check if another component in this group was selected by the user
+                                    const otherComponents = group.components.filter(c => c !== component.name);
+                                    return otherComponents.some(otherComponent => {
+                                      const otherComponentKey = `${subject.code}-${otherComponent}`;
+                                      const otherOptionId = selectedSessions[otherComponentKey];
+                                      if (!otherOptionId) return false;
+                                      
+                                      // Find which option group contains both selections
+                                      return group.options.some(optionGroup => 
+                                        optionGroup.ids.includes(otherOptionId) && 
+                                        optionGroup.ids.includes(option.id)
+                                      );
+                                    });
+                                  });
+                                
                                 return (
                                   <div 
                                     key={option.id} 
@@ -586,11 +703,20 @@ function App() {
                                       id={option.id}
                                       checked={isSelected}
                                       onChange={() => toggleSession(subject.code, component.name, option.id)}
+                                      disabled={isAutoSelected}
                                     />
-                                    <label htmlFor={option.id} className="text-sm flex flex-col">
+                                    <label htmlFor={option.id} className={`text-sm flex flex-col ${isAutoSelected ? 'italic' : ''}`}>
                                       <span>{firstSession.day} {firstSession.startTime}-{firstSession.endTime}</span>
                                       <span className="text-xs text-gray-600">{firstSession.location}</span>
                                       <span className="text-xs text-gray-600">{firstSession.instructor}</span>
+                                      {optionGroupInfo && (
+                                        <span className="text-xs bg-blue-100 text-blue-700 px-1 py-0.5 rounded mt-1">
+                                          {optionGroupInfo.name} {optionGroupInfo.groupType === 'lecturer_group' ? '(Lecturer)' : ''}
+                                        </span>
+                                      )}
+                                      {isAutoSelected && (
+                                        <span className="text-xs font-semibold text-blue-600">Auto-selected</span>
+                                      )}
                                     </label>
                                     {option.sessions.length > 1 && (
                                       <span className="text-xs bg-yellow-100 px-1 rounded">+{option.sessions.length - 1} more</span>
