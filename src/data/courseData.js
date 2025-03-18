@@ -1247,15 +1247,6 @@ export const courseData = {
       "faculty": "School of Computer Science",
       "degree": "Bachelor of Computer Science",
       "componentGroups": [
-        {
-          "groupType": "lecture_tutorial_group",
-          "name": "Lecture and Tutorial Group",
-          "description": "You must enroll in the same instructor's lecture and tutorial",
-          "components": ["Lecture", "Tutorial"],
-          "options": [
-          
-          ]
-        }
       ],
       "components": [
         {
@@ -1479,15 +1470,6 @@ export const courseData = {
       "faculty": "School of Computer Science",
       "degree": "Bachelor of Computer Science",
       "componentGroups": [
-        {
-          "groupType": "lecture_tutorial_lab_group",
-          "name": "Lecture, Tutorial and Lab Group",
-          "description": "You must enroll in matched instructor sections",
-          "components": ["Lecture", "Tutorial", "Computer Lab"],
-          "options": [
-            
-          ]
-        }
       ],
       "components": [
         {
@@ -1633,32 +1615,6 @@ export const courseData = {
       "faculty": "School of Computer Science",
       "degree": "Bachelor of Computer Science, Bachelor of Business Information Systems",
       "componentGroups": [
-        {
-          "groupType": "instructor_group",
-          "name": "Instructor Group",
-          "description": "Lab sections are grouped by instructor",
-          "components": ["Computer Lab"],
-          "options": [
-            { 
-              "groupId": "zeenath", 
-              "name": "Zeenath Khan's Labs",
-              "instructorName": "Zeenath Khan", 
-              "ids": ["csit114-lab-1", "csit114-lab-2"] 
-            },
-            { 
-              "groupId": "sara", 
-              "name": "Sara Azeem Khan's Labs",
-              "instructorName": "Sara Azeem Khan", 
-              "ids": ["csit114-lab-3"] 
-            },
-            { 
-              "groupId": "priya", 
-              "name": "Priya Aswani's Labs",
-              "instructorName": "Priya Aswani", 
-              "ids": ["csit114-lab-4", "csit114-lab-5", "csit114-lab-6", "csit114-lab-7"] 
-            }
-          ]
-        }
       ],
       "components": [
         {
@@ -2036,15 +1992,6 @@ export const courseData = {
       "faculty": "School of Computer Science",
       "degree": "Bachelor of Computer Science, Bachelor of Business Information Systems",
       "componentGroups": [
-        {
-          "groupType": "lecture_tutorial_lab_group",
-          "name": "Lecture, Tutorial and Lab Group",
-          "description": "You must enroll in compatible time slots",
-          "components": ["Lecture", "Tutorial", "Computer Lab"],
-          "options": [
-            
-          ]
-        }
       ],
       "components": [
         {
@@ -3059,15 +3006,6 @@ export const courseData = {
       "faculty": "School of Computer Science",
       "degree": "Bachelor of Computer Science",
       "componentGroups": [
-        {
-          "groupType": "lecture_tutorial_lab_group",
-          "name": "Lecture, Tutorial and Lab Group",
-          "description": "You must enroll in compatible sessions with the same instructor",
-          "components": ["Lecture", "Tutorial", "Computer Lab"],
-          "options": [
-            
-          ]
-        }
       ],
       "components": [
         {
@@ -3314,27 +3252,6 @@ export const courseData = {
           "description": "You must choose a lab session that coordinates with the lecture",
           "components": ["Lecture", "Computer Lab"],
           "options": [
-            { 
-              "groupId": "zeenath_morning", 
-              "name": "Morning Session",
-              "description": "Thursday 08:30-10:30 (Lecture) & Monday 10:30-12:30 (Lab)",
-              "instructorName": "Zeenath Khan / Pradnya Bhagwat", 
-              "ids": ["isit224-lecture-1", "isit224-lab-3"] 
-            },
-            { 
-              "groupId": "zeenath_afternoon", 
-              "name": "Afternoon Session",
-              "description": "Thursday 08:30-10:30 (Lecture) & Thursday 12:30-14:30 (Lab)",
-              "instructorName": "Zeenath Khan / Pradnya Bhagwat", 
-              "ids": ["isit224-lecture-1", "isit224-lab-1"] 
-            },
-            { 
-              "groupId": "zeenath_late", 
-              "name": "Late Afternoon Session",
-              "description": "Thursday 08:30-10:30 (Lecture) & Thursday 14:30-16:30 (Lab)",
-              "instructorName": "Zeenath Khan / Pradnya Bhagwat", 
-              "ids": ["isit224-lecture-1", "isit224-lab-2"] 
-            }
           ]
         }
       ],
