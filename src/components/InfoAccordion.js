@@ -29,7 +29,7 @@ function InfoAccordion() {
                 <h3 className="font-bold text-red-600 mb-2">⚠️ Disclaimer</h3>
                 <ul className="list-disc pl-5 space-y-1 text-sm">
                   <li>This is an unofficial tool for planning purposes only.</li>
-                  <li>Always verify your timetable through the official <a href="https://my.UOWD CSubai.ac.ae/timetable/viewer" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">UOWD Timetable Viewer</a>.</li>
+                  <li>Always verify your timetable through the official <a href="https://my.uowdubai.ac.ae/timetable/viewer" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">UOWD Timetable Viewer</a>.</li>
                   <li>Class schedules are subject to change without notice.</li>
                   <li>Use this application at your own risk.</li>
                   <li>This app does not save or submit your selections to the university.</li>
