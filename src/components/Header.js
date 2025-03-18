@@ -17,7 +17,7 @@ function Header() {
             Export as Image
           </button>
           <a 
-            href="https://github.com/adakidpv/UOWD CS-timetable-visualizer" 
+            href="https://github.com/adakidpv/UOWD-timetable-visualizer" 
             target="_blank" 
             rel="noopener noreferrer"
             className="text-white hover:text-blue-200 transition flex items-center"
