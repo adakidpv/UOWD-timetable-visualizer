@@ -2128,6 +2128,162 @@ export const courseData = {
                   "instructor": "Sara Azeem Khan"
                 }
               ]
+            },
+            {
+              "id": "csit314-lab-7",
+              "sessions": [
+                {
+                  "type": "Computer Lab",
+                  "day": "Wednesday",
+                  "startTime": "18:30",
+                  "endTime": "20:30",
+                  "location": "6.36-Computer Lab (Single Screen)",
+                  "instructor": "Nkqubela Ruxwana"
+                }
+              ]
+            },
+            {
+              "id": "csit314-lab-8",
+              "sessions": [
+                {
+                  "type": "Computer Lab",
+                  "day": "Tuesday",
+                  "startTime": "10:30",
+                  "endTime": "12:30",
+                  "location": "1.52-Computer Lab Single",
+                  "instructor": "Nkqubela Ruxwana"
+                }
+              ]
+            },
+            {
+              "id": "csit314-lab-9",
+              "sessions": [
+                {
+                  "type": "Computer Lab",
+                  "day": "Wednesday",
+                  "startTime": "18:30",
+                  "endTime": "20:30",
+                  "location": "6.40-Computer Lab Single",
+                  "instructor": "Priya Aswani"
+                }
+              ]
+            },
+            {
+              "id": "csit314-lab-10",
+              "sessions": [
+                {
+                  "type": "Computer Lab",
+                  "day": "Monday",
+                  "startTime": "14:30",
+                  "endTime": "16:30",
+                  "location": "1.52-Computer Lab Single",
+                  "instructor": "Priya Aswani"
+                }
+              ]
+            },
+            {
+              "id": "csit314-lab-11",
+              "sessions": [
+                {
+                  "type": "Computer Lab",
+                  "day": "Monday",
+                  "startTime": "14:30",
+                  "endTime": "16:30",
+                  "location": "6.40-Computer Lab Single",
+                  "instructor": "Obaid Ullah"
+                }
+              ]
+            },
+            {
+              "id": "csit314-lab-12",
+              "sessions": [
+                {
+                  "type": "Computer Lab",
+                  "day": "Wednesday",
+                  "startTime": "18:30",
+                  "endTime": "20:30",
+                  "location": "2.50-Computer Lab Single",
+                  "instructor": "Obaid Ullah"
+                }
+              ]
+            },
+            {
+              "id": "csit314-lab-13",
+              "sessions": [
+                {
+                  "type": "Computer Lab",
+                  "day": "Wednesday",
+                  "startTime": "12:30",
+                  "endTime": "14:30",
+                  "location": "6.40-Computer Lab Single",
+                  "instructor": "Omar Daoudi"
+                }
+              ]
+            },
+            {
+              "id": "csit314-lab-14",
+              "sessions": [
+                {
+                  "type": "Computer Lab",
+                  "day": "Friday",
+                  "startTime": "14:30",
+                  "endTime": "16:30",
+                  "location": "3.47-Game Dev Lab Dual Screens",
+                  "instructor": "Omar Daoudi"
+                }
+              ]
+            },
+            {
+              "id": "csit314-lab-15",
+              "sessions": [
+                {
+                  "type": "Computer Lab",
+                  "day": "Friday",
+                  "startTime": "08:30",
+                  "endTime": "10:30",
+                  "location": "2.50-Computer Lab Single",
+                  "instructor": "Pradnya Bhagwat"
+                }
+              ]
+            },
+            {
+              "id": "csit314-lab-16",
+              "sessions": [
+                {
+                  "type": "Computer Lab",
+                  "day": "Wednesday",
+                  "startTime": "12:30",
+                  "endTime": "14:30",
+                  "location": "2.50-Computer Lab Single",
+                  "instructor": "Pradnya Bhagwat"
+                }
+              ]
+            },
+            {
+              "id": "csit314-lab-17",
+              "sessions": [
+                {
+                  "type": "Computer Lab",
+                  "day": "Thursday",
+                  "startTime": "10:30",
+                  "endTime": "12:30",
+                  "location": "3.47-Game Dev Lab Dual Screens",
+                  "instructor": "Pradnya Bhagwat"
+                }
+              ]
+            },
+            {
+              "id": "csit314-lab-18",
+              "sessions": [
+                {
+                  "type": "Computer Lab",
+                  "day": "Wednesday",
+                  "startTime": "10:30",
+                  "endTime": "12:30",
+                  "location": "2.50-Computer Lab Single",
+                  "instructor": "Pradnya Bhagwat"
+                }
+              ]
             }
           ]
         },
@@ -2216,6 +2372,201 @@ export const courseData = {
                   "endTime": "10:30",
                   "location": "5.12-Informal Classroom",
                   "instructor": "Tauqeer Faiz"
+                }
+              ]
+            },
+            {
+              "id": "csit314-tutorial-4",
+              "sessions": [
+                {
+                  "type": "Tutorial",
+                  "day": "Monday",
+                  "startTime": "13:30",
+                  "endTime": "14:30",
+                  "location": "3.46-Classroom A",
+                  "instructor": "Tauqeer Faiz"
+                }
+              ]
+            },
+            {
+              "id": "csit314-tutorial-5",
+              "sessions": [
+                {
+                  "type": "Tutorial",
+                  "day": "Tuesday",
+                  "startTime": "13:30",
+                  "endTime": "14:30",
+                  "location": "4.48-Classroom B",
+                  "instructor": "Tina Thomas"
+                }
+              ]
+            },
+            {
+              "id": "csit314-tutorial-6",
+              "sessions": [
+                {
+                  "type": "Tutorial",
+                  "day": "Tuesday",
+                  "startTime": "10:30",
+                  "endTime": "11:30",
+                  "location": "4.52-Classroom A",
+                  "instructor": "Tina Thomas"
+                }
+              ]
+            },
+            {
+              "id": "csit314-tutorial-7",
+              "sessions": [
+                {
+                  "type": "Tutorial",
+                  "day": "Wednesday",
+                  "startTime": "12:30",
+                  "endTime": "13:30",
+                  "location": "6.33-Classroom B",
+                  "instructor": "Deepa Keshavamurthy"
+                }
+              ]
+            },
+            {
+              "id": "csit314-tutorial-8",
+              "sessions": [
+                {
+                  "type": "Tutorial",
+                  "day": "Monday",
+                  "startTime": "10:30",
+                  "endTime": "11:30",
+                  "location": "6.33-Classroom B",
+                  "instructor": "Tina Thomas"
+                }
+              ]
+            },
+            {
+              "id": "csit314-tutorial-9",
+              "sessions": [
+                {
+                  "type": "Tutorial",
+                  "day": "Wednesday",
+                  "startTime": "08:30",
+                  "endTime": "09:30",
+                  "location": "5.12-Informal Classroom",
+                  "instructor": "Sara Majeed"
+                }
+              ]
+            },
+            {
+              "id": "csit314-tutorial-10",
+              "sessions": [
+                {
+                  "type": "Tutorial",
+                  "day": "Wednesday",
+                  "startTime": "09:30",
+                  "endTime": "10:30",
+                  "location": "5.12-Informal Classroom",
+                  "instructor": "Sara Majeed"
+                }
+              ]
+            },
+            {
+              "id": "csit314-tutorial-11",
+              "sessions": [
+                {
+                  "type": "Tutorial",
+                  "day": "Wednesday",
+                  "startTime": "14:30",
+                  "endTime": "15:30",
+                  "location": "5.10-Classroom B",
+                  "instructor": "Sara Majeed"
+                }
+              ]
+            },
+            {
+              "id": "csit314-tutorial-12",
+              "sessions": [
+                {
+                  "type": "Tutorial",
+                  "day": "Wednesday",
+                  "startTime": "11:30",
+                  "endTime": "12:30",
+                  "location": "5.18-Classroom A",
+                  "instructor": "Sara Majeed"
+                }
+              ]
+            },
+            {
+              "id": "csit314-tutorial-13",
+              "sessions": [
+                {
+                  "type": "Tutorial",
+                  "day": "Thursday",
+                  "startTime": "09:30",
+                  "endTime": "10:30",
+                  "location": "4.48-Classroom B",
+                  "instructor": "Sonia Dagou"
+                }
+              ]
+            },
+            {
+              "id": "csit314-tutorial-14",
+              "sessions": [
+                {
+                  "type": "Tutorial",
+                  "day": "Thursday",
+                  "startTime": "08:30",
+                  "endTime": "09:30",
+                  "location": "4.48-Classroom B",
+                  "instructor": "Sonia Dagou"
+                }
+              ]
+            },
+            {
+              "id": "csit314-tutorial-15",
+              "sessions": [
+                {
+                  "type": "Tutorial",
+                  "day": "Tuesday",
+                  "startTime": "11:30",
+                  "endTime": "12:30",
+                  "location": "3.42-Classroom B",
+                  "instructor": "Tina Thomas"
+                }
+              ]
+            },
+            {
+              "id": "csit314-tutorial-16",
+              "sessions": [
+                {
+                  "type": "Tutorial",
+                  "day": "Wednesday",
+                  "startTime": "16:30",
+                  "endTime": "17:30",
+                  "location": "6.33-Classroom B",
+                  "instructor": "Deepa Keshavamurthy"
+                }
+              ]
+            },
+            {
+              "id": "csit314-tutorial-17",
+              "sessions": [
+                {
+                  "type": "Tutorial",
+                  "day": "Wednesday",
+                  "startTime": "16:30",
+                  "endTime": "17:30",
+                  "location": "5.12-Informal Classroom",
+                  "instructor": "Sara Azeem Khan"
+                }
+              ]
+            },
+            {
+              "id": "csit314-tutorial-18",
+              "sessions": [
+                {
+                  "type": "Tutorial",
+                  "day": "Thursday",
+                  "startTime": "13:30",
+                  "endTime": "14:30",
+                  "location": "6.38-Classroom B",
+                  "instructor": "Sara Azeem Khan"
                 }
               ]
             }
