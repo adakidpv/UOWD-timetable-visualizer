@@ -3246,14 +3246,6 @@ export const courseData = {
       "faculty": "School of Computer Science",
       "degree": "Bachelor of Computer Science, Bachelor of Business Information Systems",
       "componentGroups": [
-        {
-          "groupType": "lecture_lab_group",
-          "name": "Lecture and Lab Group",
-          "description": "You must choose a lab session that coordinates with the lecture",
-          "components": ["Lecture", "Computer Lab"],
-          "options": [
-          ]
-        }
       ],
       "components": [
         {
