@@ -19,7 +19,7 @@ A responsive and interactive tool to help university students plan their timetab
 
 1. Clone the repository:
    ```
-   git clone https://github.com/yourusername/timetable-chooser.git
+   git clone https://github.com/adakidpv/timetable-chooser.git
    ```
 
 2. Navigate to the project directory:
