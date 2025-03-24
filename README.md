@@ -14,16 +14,6 @@ A responsive and interactive tool to help university students plan their timetab
 - **Custom Color Selection**: Personalize the colors for each subject
 - **Image Export**: Export your timetable as an image for sharing or printing
 
-## Demo
-
-### Selecting Classes
-![Selecting Classes Demo](/readme-assets/selecting-classes.gif)
-
-### Managing Conflicts
-![Conflict Resolution Demo](/readme-assets/conflict-resolution.gif)
-
-### Exporting Timetable
-![Exporting Timetable Demo](/readme-assets/export.gif)
 
 ## Installation
 
