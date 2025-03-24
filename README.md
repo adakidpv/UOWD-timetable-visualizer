@@ -2,7 +2,7 @@
 
 A responsive and interactive tool to help university students plan their timetables by visualizing course schedules and managing potential time conflicts.
 
-![Timetable Planner Overview](placeholder-for-main-screenshot.png)
+![Timetable Planner Overview](/readme-assets/screenshot.png)
 
 ## Features
 
@@ -17,13 +17,13 @@ A responsive and interactive tool to help university students plan their timetab
 ## Demo
 
 ### Selecting Classes
-![Selecting Classes Demo](placeholder-for-selecting-classes.gif)
+![Selecting Classes Demo](/readme-assets/selecting-classes.gif)
 
 ### Managing Conflicts
-![Conflict Resolution Demo](placeholder-for-conflict-resolution.gif)
+![Conflict Resolution Demo](/readme-assets/conflict-resolution.gif)
 
 ### Exporting Timetable
-![Exporting Timetable Demo](placeholder-for-export.gif)
+![Exporting Timetable Demo](/readme-assets/export.gif)
 
 ## Installation
 
