@@ -45,7 +45,7 @@ function Footer() {
               </svg>
             </a>
             <a 
-              href="mailto:adakidpv@gmail.com" 
+              href="mailto:akhilanil.100@gmail.com" 
               className="text-gray-600 hover:text-blue-700 transition"
               title="Email"
             >
